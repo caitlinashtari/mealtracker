@@ -6,8 +6,19 @@ import { Component } from '@angular/core';
   <div class="container">
     <h1>Meal Tracker for {{month}}/{{day}}/{{year}}</h1>
     <ul>
-      <li [class]="calorieColor(currentMeal)" *ngFor="let currentMeal of meals">{{currentMeal.name}} - {{currentMeal.details}} - {{currentMeal.calories}} calories <button (click)="editMeal()">Edit</button></li>
+      <li [class]="calorieColor(currentMeal)" *ngFor="let currentMeal of meals">{{currentMeal.name}} - {{currentMeal.details}} - {{currentMeal.calories}} calories <button (click)="editMeal(currentMeal)">Edit</button></li>
     </ul>
+    <hr>
+    <div>
+      <h3>{{selectedMeal.name}}</h3>
+      <h3>Edit Meal</h3>
+      <label>Meal Name:</label>
+      <input [(ngModel)]="selectedMeal.name">
+      <label>Details:</label>
+      <input [(ngModel)]="selectedMeal.details">
+      <label>Calories:</label>
+      <input [(ngModel)]="selectedMeal.calories">
+    </div>
   </div>
   `
 })
@@ -23,7 +34,11 @@ export class AppComponent {
     new Meal("Ice Creams", "I ate many ice creams", 265)
   ];
 
-  editMeal(){}
+  selectedMeal: Meal = this.meals[0];
+
+  editMeal(clickedMeal){
+    this.selectedMeal = clickedMeal;
+  }
 
   calorieColor(currentMeal){
     if(currentMeal.calories >= 500){
