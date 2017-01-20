@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       <li [class]="calorieColor(currentMeal)" *ngFor="let currentMeal of meals">{{currentMeal.name}} - {{currentMeal.details}} - {{currentMeal.calories}} calories <button (click)="editMeal(currentMeal)">Edit</button></li>
     </ul>
     <hr>
-    <div>
+    <div *ngIf="selectedMeal">
       <h3>{{selectedMeal.name}}</h3>
       <h3>Edit Meal</h3>
       <label>Meal Name:</label>
@@ -18,6 +18,7 @@ import { Component } from '@angular/core';
       <input [(ngModel)]="selectedMeal.details">
       <label>Calories:</label>
       <input [(ngModel)]="selectedMeal.calories">
+      <button (click)="finishedEditing()">Done</button>
     </div>
   </div>
   `
@@ -34,11 +35,15 @@ export class AppComponent {
     new Meal("Ice Creams", "I ate many ice creams", 265)
   ];
 
-  selectedMeal: Meal = this.meals[0];
+  selectedMeal: null;
 
   editMeal(clickedMeal){
     this.selectedMeal = clickedMeal;
   }
+
+  finishedEditing() {
+   this.selectedMeal = null;
+ }
 
   calorieColor(currentMeal){
     if(currentMeal.calories >= 500){
