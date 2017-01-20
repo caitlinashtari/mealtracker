@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <ul>
-    <li *ngFor="let currentMeal of childMealList">{{currentMeal.name}} - {{currentMeal.details}} - {{currentMeal.calories}} calories <button (click)="editButtonHasBeenClicked(currentMeal)">Edit</button></li>
+    <li *ngFor="let currentMeal of childMealList | calorieness">{{currentMeal.name}} - {{currentMeal.details}} - {{currentMeal.calories}} calories <button (click)="editButtonHasBeenClicked(currentMeal)">Edit</button></li>
   </ul>
   `
 })
