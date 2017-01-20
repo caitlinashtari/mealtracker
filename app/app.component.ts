@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
   template: `
   <div class="container">
     <h1>Meal Tracker for {{month}}/{{day}}/{{year}}</h1>
-    <meal-list></meal-list>
+    <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
     <hr>
     <div *ngIf="selectedMeal">
       <h3>{{selectedMeal.name}}</h3>
@@ -29,6 +29,11 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
 
+  masterMealList: Meal[] = [
+    new Meal("Fries", "I ate many fries", 600),
+    new Meal("Pies", "I ate many pies", 365),
+    new Meal("Ice Creams", "I ate many ice creams", 265)
+  ];
 
   selectedMeal: null;
 
