@@ -26,7 +26,7 @@ export class AppComponent {
     new Meal("Ice Creams", "I ate many ice creams", 265)
   ];
 
-  selectedMeal: null;
+  selectedMeal = null;
 
   editMeal(clickedMeal){
     this.selectedMeal = clickedMeal;
