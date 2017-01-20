@@ -8,17 +8,7 @@ import { Meal } from './meal.model';
     <h1>Meal Tracker for {{month}}/{{day}}/{{year}}</h1>
     <meal-list [childMealList]="masterMealList" (clickSender)="editMeal($event)"></meal-list>
     <hr>
-    <div *ngIf="selectedMeal">
-      <h3>{{selectedMeal.name}}</h3>
-      <h3>Edit Meal</h3>
-      <label>Meal Name:</label>
-      <input [(ngModel)]="selectedMeal.name">
-      <label>Details:</label>
-      <input [(ngModel)]="selectedMeal.details">
-      <label>Calories:</label>
-      <input [(ngModel)]="selectedMeal.calories">
-      <button (click)="finishedEditing()">Done</button>
-    </div>
+    <edit-meal [childSelectedMeal]="selectedMeal" (doneButtonClickedSender)="finishedEditing()"></edit-meal>
   </div>
   `
 })
