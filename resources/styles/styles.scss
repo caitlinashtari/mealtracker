@@ -1,0 +1,44 @@
+$white: #f6f6f6;
+$yellowy: #d3d3d3;
+
+body {
+  font-family:'Quicksand', sans-serif;
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 80px;
+  background-image: url('../images/fries.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: solid $white;
+  color: $white;
+  text-shadow: 2px 2px $yellowy;
+  font-size: 150px;
+}
+
+.dropDown {
+  text-align: center;
+}
+
+.meals {
+  text-align: center;
+  padding: 20px;
+  list-style: none;
+}
+
+.btn {
+  padding-left: 10px;
+}
+
+.newMeal {
+  text-align: center;
+}
+
+label {
+  padding-top: 20px;
+}
+
+#addMeal {
+  margin: 20px;
+}

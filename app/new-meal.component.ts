@@ -4,19 +4,21 @@ import { Meal } from './meal.model';
 @Component({
   selector: 'new-meal',
   template: `
-    <h3>New Meal</h3>
-    <div>
-      <label>Meal Name:</label>
-      <input #newName>
-    </div>
-    <div>
-      <label>Meal Details:</label>
-      <input #newDetails>
-    </div>
-    <div>
-      <label>Calories:</label>
-      <input #newCalories>
-      <button (click)="submitForm(newName.value, newDetails.value, newCalories.value); newName.value=''; newDetails.value=''; newCalories.value='';">Add</button>
+    <div class="newMeal">
+      <h3>New Meal</h3>
+      <div>
+        <label>Meal Name:</label>
+        <input #newName>
+      </div>
+      <div>
+        <label>Meal Details:</label>
+        <input #newDetails>
+      </div>
+      <div>
+        <label>Calories:</label>
+        <input #newCalories>
+      </div>
+      <button class="btn btn-warning" id="addMeal" (click)="submitForm(newName.value, newDetails.value, newCalories.value); newName.value=''; newDetails.value=''; newCalories.value='';">Add</button>
     </div>
   `
 })
