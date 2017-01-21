@@ -29,7 +29,7 @@ You will need the following things properly installed on your computer.
 
 ## Technologies Used
 
-_Angular2, JavaScript, TypeScript, Bootstrap _
+_ Angular2, JavaScript, TypeScript, Bootstrap _
 
 ### License
 
